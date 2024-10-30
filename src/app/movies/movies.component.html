@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="container mt-5">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Sinopsis</th>
+          <th>Año</th>
+          <th>Cover</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of movies">
+          <td>{{ movie.title }}</td>
+          <td>{{ movie.synopsis }}</td>
+          <td>{{ movie.year }}</td>
+          <td><img [src]="movie.cover" alt="{{ movie.title }}" width="50"></td>
+          <td><a [routerLink]="['/movie', movie.id]" class="btn btn-primary">Ver Detalles</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+</body>
+</html>
